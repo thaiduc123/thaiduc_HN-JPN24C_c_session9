@@ -33,14 +33,21 @@ int main(){
                 break; 
 			}
             case 3:{
-                int add;
-                printf("gia tri can them: ");
-                scanf("%d", &add);
-                arr[n++]=add;              
-                break;
+		printf("Nhap vi tri muon them moi phan tu: ");
+		scanf("%d",&position);
+		printf("Nhap gia tri muon them moi vao mang: ");
+		scanf("%d",&value);
+		if(position<0 || position > n){
+			printf("Vi tri ban nhap khong hop le\n");
+		}else {
+			for (int i = n; i > position; i--) {
+       			arr[i] = arr[i - 1];
+    		}
+    		arr[position]=value;
+    		n++; 
             }
             case 4:{
-				int addIndex, newIndex;
+		int addIndex, newIndex;
                 printf("vi tri can sua: ");
                 scanf("%d", &addIndex);
                 if (addIndex<0 || addIndex>=n) {
